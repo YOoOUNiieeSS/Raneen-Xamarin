@@ -311,6 +311,7 @@ namespace FinProj.ViewModels
         private void AddToCartClicked(object obj)
         {
             // Do something
+
         }
 
         /// <summary>

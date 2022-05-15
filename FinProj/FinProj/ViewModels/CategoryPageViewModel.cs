@@ -1,4 +1,5 @@
 using FinProj.Models;
+using FinProj.Views;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Xamarin.Forms;
@@ -78,6 +79,17 @@ namespace FinProj.ViewModels
         private void CategorySelected(object obj)
         {
             // Do Something
+
+            string subCat = (obj as Category).Name;
+            switch (subCat)
+            {
+                case "Clothes":
+                    var dest = new CatalogTilePage();
+                    NavigationPage.SetHasNavigationBar(dest, true);
+                    NavigationPage.SetHasBackButton(dest, true);
+                    Application.Current.MainPage.Navigation.PushAsync(dest);
+                    break;
+            }
         }
 
         /// <summary>
