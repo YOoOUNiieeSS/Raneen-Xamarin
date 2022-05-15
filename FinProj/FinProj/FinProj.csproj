@@ -1,0 +1,143 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MVVM\**" />
+    <EmbeddedResource Remove="MVVM\**" />
+    <None Remove="MVVM\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\ecommerce.json" />
+    <None Remove="Data\errorAndEmpty.json" />
+    <None Remove="Images\EmptyCart.svg" />
+    <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\UIFontIcons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\ecommerce.json" />
+    <EmbeddedResource Include="Data\errorAndEmpty.json" />
+    <EmbeddedResource Include="Images\EmptyCart.svg" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\UIFontIcons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.Extended" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="20.1.0.55" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Styles\AvatarViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\BorderStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\BoxViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\CheckBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\EditorStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\EntryStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\FontIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\FrameStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\GradientViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\LabelStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ListViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\RadioButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\RatingStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\SegmentedControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\TextInputLayoutStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="testDB.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AccountPageContainer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CatalogTilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CategoryTilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmptyCartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\ProductTileTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

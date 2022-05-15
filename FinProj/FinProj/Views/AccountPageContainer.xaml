@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinProj.Views.AccountPageContainer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="userImg" Source="userL.png" Margin="0,35,0,0"/>
+            <Label x:Name="userName" Text="Reem Khalil"
+                   FontSize="Large" TextColor="Black"
+                   HorizontalTextAlignment="Center" Padding="0,15,0,0"/>
+
+            <Label x:Name="userEmail" Text="Reem.Khalil@gmail.com"
+                   HorizontalTextAlignment="Center" FontSize="Subtitle"/>
+            <ScrollView HorizontalOptions="Center" Margin="0,0,0,30">
+                <!--Account Info -->
+                <StackLayout Padding="0,35,0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,20">
+                        <StackLayout>
+                            <Frame x:Name="frame1" CornerRadius="5" 
+                                Padding="4"
+                                IsClippedToBounds="True">
+                                <Image Source="user.png" 
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+
+                        <Label Text="Account Information" VerticalOptions="Center"
+                               Padding="10,0,0,0" FontSize="Small"
+                               TextColor="Black" FontAttributes="Bold"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAccountInfoTapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <!--My Addresses -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+
+                        <StackLayout>
+                            <Frame CornerRadius="5" 
+                                Padding="4"
+                                x:Name="frameAddress"
+                                IsClippedToBounds="True">
+                                <Image Source="location.png" 
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+
+                        <Label Text="My Addresses" VerticalOptions="Center"
+                               Padding="10,0,0,0" FontSize="Small"
+                               TextColor="Black" FontAttributes="Bold"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMyAddressesTapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+
+                    <!--My Order -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Margin="0,0,0,20" >
+                        <StackLayout>
+                            <Frame CornerRadius="5" 
+                                Padding="4"
+                                x:Name="frameOrder"
+                                IsClippedToBounds="True">
+                                <Image Source="store.png" 
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="My Orders" VerticalOptions="Center"
+                               Padding="10,0,0,0" FontSize="Small"
+                               TextColor="Black" FontAttributes="Bold"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMyOrdersTapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <!--My WishList -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Margin="0,0,0,20">
+                        <StackLayout>
+                            <Frame CornerRadius="5" 
+                                Padding="4"
+                                x:Name="frameWish"
+                                IsClippedToBounds="True">
+                                <Image Source="heart.png" 
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="My Wishlist" VerticalOptions="Center"
+                               Padding="10,0,0,0" FontSize="Small"
+                               TextColor="Black" FontAttributes="Bold"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAccountWishListTapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+
+                    <!--Log out -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+                        <StackLayout>
+                            <Frame CornerRadius="5" 
+                                Padding="4"
+                                x:Name="frameLog"
+                                IsClippedToBounds="True">
+                                <Image Source="logoutM.png" WidthRequest="32" HeightRequest="32"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="Log out" VerticalOptions="Center"
+                               Padding="10,0,0,0" FontSize="Small"
+                               TextColor="Black" FontAttributes="Bold"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogOut"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinProj.testDB">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="List_test" RowHeight="240" ItemSelected="listItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--
+                            
+                            
+                            
+                            <StackLayout Margin="20">
+                                <Label Text="{Binding StateID}"/>
+                                <Label Text="{Binding StateName}"/>
+                                <StackLayout Orientation="Horizontal" x:Name="milo">
+                                    <Label Text="Selected City Id "/>
+                                    <Label Text="{Binding stateID}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Margin="20">
+                                <Label Text="{Binding CityId}"/>
+                                <Label Text="{Binding CityName}"/>
+                                <Label Text="{Binding StateId}"/>
+
+                            </StackLayout>
+                            -->
+                            <StackLayout  Margin="20">
+                                <Label Text="{Binding ID}"/>
+                                <Label Text="{Binding FirstName}"/>
+                                <Label Text="{Binding LastName}" />
+                                <Label Text="{Binding Email}"/>
+                                <Label Text="{Binding Password}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btn_test" Text="Getdata"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

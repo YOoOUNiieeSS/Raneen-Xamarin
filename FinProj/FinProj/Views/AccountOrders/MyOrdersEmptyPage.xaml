@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinProj.Views.AccountOrders.MyOrdersEmptyPage"
+             NavigationPage.IconColor="Black"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,75,0">
+            <Label Text="My Orders" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start"  VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+
+            <Label Text="NO ORDERS TILL NOW" Margin="0,0,0,5" 
+                   HorizontalOptions="Center" FontAttributes="Bold"
+                   FontSize="Medium" TextColor="Black"/>
+            
+            <Label Text="START NOW" Margin="0,0,0,10" FontSize="Small"
+                   TextColor="Black" HorizontalOptions="Center"/>
+            <Button Text="Back" TextColor="White"
+                    HorizontalOptions="FillAndExpand" BackgroundColor="red"
+                    CornerRadius="8" Clicked="btn_back"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
