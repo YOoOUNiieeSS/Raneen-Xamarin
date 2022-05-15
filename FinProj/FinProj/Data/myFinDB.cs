@@ -31,9 +31,46 @@ namespace FinProj.Data
                 await database.CreateTableAsync<state>();
                 await database.CreateTableAsync<city>();
                 await database.CreateTableAsync<Address>();
+                await database.CreateTableAsync<ProductDb>();
+                await database.CreateTableAsync<WishList>();
                 //await database.DropTableAsync<city>();
                 //await database.DropTableAsync<Address>();
             }
+        }
+        public static async Task AddProductToCartList(Product newProd)
+        {
+            await Init();
+            ProductDb prod = new ProductDb()
+            {
+                ActualPrice = newProd.ActualPrice,
+                Description = newProd.Description,
+                DiscountPrice = newProd.DiscountPrice,
+                Id = newProd.Id,
+                IsFavourite = newProd.IsFavourite,
+                Name = newProd.Name,
+                PreviewImage = newProd.PreviewImage,
+                Summary = newProd.Summary
+            };
+            await database.InsertAsync(prod);
+        }
+
+
+        public static async Task AddProductToWishList(Product newProd,int userId)
+        {
+            await Init();
+            
+            WishList w = new WishList()
+            {
+                ProductId = newProd.Id,
+                UserID=userId,
+            };
+            await database.InsertAsync(w);
+        }
+
+        public static async Task<IEnumerable<ProductDb>> getAllProd()
+        {
+            await Init();
+            return await database.Table<ProductDb>().ToListAsync();
         }
         // ***************Add State**********************
 

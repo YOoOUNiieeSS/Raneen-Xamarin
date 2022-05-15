@@ -6,12 +6,16 @@
              NavigationPage.HasNavigationBar="False" >
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Frame BackgroundColor="White">
-                    <Label TextColor="Red" FontSize="20">Raneen</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="White" Grid.Column="0" Grid.Row="0">
+                    <Label TextColor="Red" FontSize="20" >Raneen</Label>
                 </Frame>
-                <SearchBar x:Name="searchWord" Placeholder="Search Raneen" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
+                <SearchBar x:Name="searchWord" Placeholder="Search Raneen" Grid.Column="1" Grid.Row="0"/>
+            </Grid>
             <Grid>
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <StackLayout>

@@ -19,6 +19,9 @@ namespace FinProj.Views
             InitializeComponent();
         }
 
-        
+        private async void load(object sender, EventArgs e)
+        {
+            myList.ItemsSource= await myFinDB.getAllProd();
+        }
     }
 }
