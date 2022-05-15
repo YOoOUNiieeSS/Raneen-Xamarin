@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.Views.AcountAddresses.MyAddressesPage"
+             NavigationPage.IconColor="Black"
+             >
+
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,75,0">
+            <Label Text="My Addresses" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start"  VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="+Add New Address" TextColor="CadetBlue" x:Name="btn_add" BackgroundColor="GhostWhite"
+                        WidthRequest="180" HorizontalOptions="Start" Clicked="btn_addAditionalAddress"/>
+                <ListView x:Name="List_test" RowHeight="200" ItemSelected="listItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!--
+                            
+                            -->
+                                <StackLayout  Margin="20">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding FirstName}"/>
+                                        <Label Text="{Binding LastName}" />
+                                    </StackLayout>
+
+                                    <Label Text="{Binding Street}"/>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding StateName}"/>
+                                        <Label Text=","/>
+                                        <Label Text="{Binding CityName}"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Country}"/>
+                                    <Label Text="{Binding Phone}"/>
+                                </StackLayout>
+
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Edit" Clicked="Edit_AddressClicked" CommandParameter="{Binding .}"/>
+                                    <MenuItem Text="Delete" Clicked="Delete_AddressClicked" CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

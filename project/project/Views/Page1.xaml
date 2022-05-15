@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:project.Views"
+             x:Class="project.Views.Page1">
+    <TabBar>
+        <Tab Title="Photos" >
+            <ShellContent>
+                <views:PhotosPage/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Category" >
+            <ShellContent>
+                <views:CategoryTilePage/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Album">
+            <ShellContent>
+                <views:AlbumPage/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Settings" >
+            <ShellContent>
+                <views:SettingsPage/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

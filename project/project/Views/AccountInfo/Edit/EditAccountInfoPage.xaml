@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProStart.MVVM.View.Edit.EditAccountInfoPage"
+             NavigationPage.IconColor="Black"
+             >
+    
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,75,0" >
+            <Label Text="Edit Account Info" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="Start"  VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="mainBg" Padding="20">
+
+                <Label Padding="15,15,0,0" Text="First Name" FontSize="13"
+                       FontAttributes="Bold" TextColor="Black"/>
+                <Entry x:Name="ent_FN" HeightRequest="50" Placeholder="Reem"
+                               BackgroundColor="White" Margin="15"/>
+
+                <Label Padding="15,0,0,0" Text="Last Name" FontSize="13"
+                       FontAttributes="Bold" TextColor="Black"/>
+                <Entry x:Name="ent_LN" HeightRequest="50" Placeholder="Khalil"
+                               BackgroundColor="White" Margin="15"/>
+
+                <Label Padding="15,0,5,0" Text="Your Current Password" FontSize="13"
+                       FontAttributes="Bold" TextColor="Black"/>
+                <Entry BackgroundColor="White" Margin="15" x:Name="ent_Password" HeightRequest="55" Placeholder="Enter password here" />
+
+                
+                <Button Text="Edit Information" Margin="15,15,15,0"  FontSize="13"
+                        FontAttributes="Bold" TextColor="White"
+                        BackgroundColor="Red" HeightRequest="50" CornerRadius="7"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
