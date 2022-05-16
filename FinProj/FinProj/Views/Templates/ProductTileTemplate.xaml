@@ -101,5 +101,17 @@
             Text="{Binding IsFavourite, Converter={StaticResource boolToStringConverter}, ConverterParameter=1}"
             TextColor="{Binding IsFavourite, Converter={x:StaticResource boolToColorConverter}, ConverterParameter=4}" />
 
+        <!--  Add To Cart  -->
+        <buttons:SfButton
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="0,0,0,8"
+            Padding="0"
+            Command="{Binding ParentBindingContext.AddToCartCommand, Source={x:Reference productTileTemplate}}"
+            CommandParameter="{Binding}"
+            FontSize="16"
+            HeightRequest="-1"
+            Text="Add To Cart"
+            BackgroundColor="Red" TextColor="White" />
     </Grid>
 </Grid>

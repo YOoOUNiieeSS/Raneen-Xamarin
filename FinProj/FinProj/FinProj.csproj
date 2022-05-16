@@ -44,6 +44,7 @@
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="20.1.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.1.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="20.1.0.55" />
@@ -133,10 +134,22 @@
     <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\offers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SignPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\ProductListTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\ProductTileTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WishListSummaryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

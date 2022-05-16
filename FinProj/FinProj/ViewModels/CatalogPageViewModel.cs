@@ -1,3 +1,4 @@
+using FinProj.Data;
 using FinProj.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -301,6 +302,8 @@ namespace FinProj.ViewModels
             if (obj is Product product)
             {
                 product.IsFavourite = !product.IsFavourite;
+                myFinDB.AddProductToWishList(product,1);
+
             }
         }
 
@@ -311,6 +314,11 @@ namespace FinProj.ViewModels
         private void AddToCartClicked(object obj)
         {
             // Do something
+            if(obj is Product product)
+            {
+                myFinDB.AddProductToCartList(product);
+                Application.Current.MainPage.DisplayAlert("", "Successfully added", "Ok");
+            }
         }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace FinProj.Data
     internal class myFinDB
     {
         static SQLiteAsyncConnection database;
-
+        public static List<Product> mywishList =new List<Product>();
         static async Task Init()
         {
             if (database != null)
@@ -31,9 +31,47 @@ namespace FinProj.Data
                 await database.CreateTableAsync<state>();
                 await database.CreateTableAsync<city>();
                 await database.CreateTableAsync<Address>();
+                await database.CreateTableAsync<ProductDb>();
+                await database.CreateTableAsync<WishList>();
                 //await database.DropTableAsync<city>();
                 //await database.DropTableAsync<Address>();
             }
+        }
+        public static async Task AddProductToCartList(Product newProd)
+        {
+            await Init();
+            ProductDb prod = new ProductDb()
+            {
+                ActualPrice = newProd.ActualPrice,
+                Description = newProd.Description,
+                DiscountPrice = newProd.DiscountPrice,
+                Id = newProd.Id,
+                IsFavourite = newProd.IsFavourite,
+                Name = newProd.Name,
+                PreviewImage = newProd.PreviewImage,
+                Summary = newProd.Summary
+            };
+            await database.InsertAsync(prod);
+        }
+
+
+        public static async Task AddProductToWishList(Product newProd,int userId)
+        {
+            await Init();
+            
+            WishList w = new WishList()
+            {
+                ProductId = newProd.Id,
+                UserID=userId,
+            };
+            await database.InsertAsync(w);
+            mywishList.Add(newProd);
+        }
+
+        public static async Task<IEnumerable<ProductDb>> getAllProd()
+        {
+            await Init();
+            return await database.Table<ProductDb>().ToListAsync();
         }
         // ***************Add State**********************
 
@@ -129,6 +167,14 @@ namespace FinProj.Data
             var allAddress = await database.Table<Address>().ToListAsync();
             return allAddress;
         }
+
+        // ***************Get wishlist**********************
+        public static async Task<IEnumerable<WishList>> GetWishList()
+        {
+            await Init();
+            var WishList = await database.Table<WishList>().ToListAsync();
+            return WishList;
+        }
         public static async Task DeleteAddress(Address _address)
         {
             await database.DeleteAsync(_address);
@@ -136,6 +182,12 @@ namespace FinProj.Data
         public static async Task UpdateAddress(Address _address)
         {
             await database.UpdateAsync(_address);
+        }
+
+        // ***************Delete wishlist**********************
+        public static async Task DeleteWishList(WishList _wish)
+        {
+            await database.DeleteAsync(_wish);
         }
     }
 }

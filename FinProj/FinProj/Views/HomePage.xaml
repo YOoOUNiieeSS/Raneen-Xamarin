@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinProj.Views.HomePage" xmlns:pages="clr-namespace:FinProj.Views">
+             x:Class="FinProj.Views.HomePage" xmlns:pages="clr-namespace:FinProj.Views"
+             Shell.NavBarIsVisible="False">
     <Shell.Resources>
         <ResourceDictionary>
             <Color x:Key="themeColor" >#530100</Color>
@@ -20,8 +21,9 @@
             <Style TargetType="TabBar" BasedOn="{StaticResource baseStyle}"/>
         </ResourceDictionary>
     </Shell.Resources>
-    <!--
-         <Tab Title="Home Page"
+
+    <TabBar>
+        <Tab Title="Home Page"
             Icon="icon_home.png">
             <ShellContent ContentTemplate="{DataTemplate pages:HomePage5}"/>
         </Tab>
@@ -33,12 +35,6 @@
             Icon="icon_deals.png">
             <ShellContent ContentTemplate="{DataTemplate pages:offers}"/>
         </Tab>
-        <Tab Title="Cart"
-            Icon="icon_cart.png">
-            <ShellContent ContentTemplate="{DataTemplate pages:EmptyCartPage}"/>
-        </Tab>
-    -->
-    <TabBar>
         <Tab Title="Cart"
             Icon="icon_cart.png">
             <ShellContent ContentTemplate="{DataTemplate pages:EmptyCartPage}"/>
