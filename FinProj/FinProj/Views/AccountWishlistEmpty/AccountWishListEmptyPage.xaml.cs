@@ -28,7 +28,7 @@ namespace FinProj.Views.AccountWishlistEmpty
             Navigation.PushAsync(new HomePage());
         }
 
-        protected async override void OnAppearing()
+        protected  override void OnAppearing()
         {
             //myWishList = (List<WishList>)await myFinDB.GetWishList();
             if(myFinDB.mywishList.Count==0)
