@@ -302,7 +302,7 @@ namespace FinProj.ViewModels
             if (obj is Product product)
             {
                 product.IsFavourite = !product.IsFavourite;
-
+                myFinDB.AddProductToWishList(product, 1);
             }
         }
 

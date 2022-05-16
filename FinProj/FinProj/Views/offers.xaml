@@ -8,7 +8,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button Text="Load" Clicked="load"/>
-            <ListView x:Name="myList" />
+            <ListView x:Name="myList" BindingContext="{Binding}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,15 +13,6 @@
 
         <Grid RowDefinitions="*, Auto">
 
-            <button:SfButton
-                Margin="8"
-                Command="{Binding BackButtonCommand}"
-                FontSize="20"
-                HorizontalOptions="End"
-                Style="{StaticResource IconButtonStyle}"
-                Text="{StaticResource Close}"
-                VerticalOptions="Start" />
-
             <StackLayout
                 BackgroundColor="Transparent"
                 Spacing="0"
