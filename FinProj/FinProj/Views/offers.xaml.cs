@@ -17,6 +17,7 @@ namespace FinProj.Views
         public offers()
         {
             InitializeComponent();
+            myList.BindingContext = myFinDB.CartListProducts;
         }
 
         private async void load(object sender, EventArgs e)

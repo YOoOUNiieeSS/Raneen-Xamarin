@@ -12,7 +12,7 @@ namespace FinProj.Data
     internal class myFinDB
     {
         static SQLiteAsyncConnection database;
-
+        public static List<ProductDb> CartListProducts =new List<ProductDb> ();
         static async Task Init()
         {
             if (database != null)
@@ -52,6 +52,7 @@ namespace FinProj.Data
                 Summary = newProd.Summary
             };
             await database.InsertAsync(prod);
+            CartListProducts.Add(prod);
         }
 
 
