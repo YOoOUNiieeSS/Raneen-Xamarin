@@ -13,6 +13,7 @@ namespace FinProj.Data
     {
         static SQLiteAsyncConnection database;
         public static List<ProductDb> CartListProducts =new List<ProductDb> ();
+        public static List<Product> mywishList =new List<Product>();
         static async Task Init()
         {
             if (database != null)
@@ -167,6 +168,14 @@ namespace FinProj.Data
             var allAddress = await database.Table<Address>().ToListAsync();
             return allAddress;
         }
+
+        // ***************Get wishlist**********************
+        public static async Task<IEnumerable<WishList>> GetWishList()
+        {
+            await Init();
+            var WishList = await database.Table<WishList>().ToListAsync();
+            return WishList;
+        }
         public static async Task DeleteAddress(Address _address)
         {
             await database.DeleteAsync(_address);
@@ -174,6 +183,12 @@ namespace FinProj.Data
         public static async Task UpdateAddress(Address _address)
         {
             await database.UpdateAsync(_address);
+        }
+
+        // ***************Delete wishlist**********************
+        public static async Task DeleteWishList(WishList _wish)
+        {
+            await database.DeleteAsync(_wish);
         }
     }
 }
