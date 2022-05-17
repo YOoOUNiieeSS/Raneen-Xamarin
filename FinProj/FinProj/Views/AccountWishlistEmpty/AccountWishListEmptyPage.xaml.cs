@@ -23,9 +23,13 @@ namespace FinProj.Views.AccountWishlistEmpty
 
 
 
-        private void Btn_wishListStartNow(object sender, EventArgs e)
+        private async void Btn_wishListStartNow(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            //await Navigation.PushAsync(new CategoryTilePage());
+            //Routing.RegisterRoute("Home Page", typeof(HomePage));
+            //await Shell.Current.GoToAsync("../../Cart");
+            //await Shell.Current.Navigation.PushModalAsync(new HomePage5());
+            await Shell.Current.Navigation.PopToRootAsync();
         }
 
         protected  override void OnAppearing()

@@ -75,7 +75,17 @@ namespace FinProj.Views
 
         private void OnAccountWishListTapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AccountWishListEmptyPage());
+
+            if (myFinDB.mywishList.Count == 0)
+            {
+                Navigation.PushAsync(new AccountWishListEmptyPage());
+
+            }
+            else
+            {
+                Navigation.PushAsync(new WishListSummaryPage());
+
+            }
 
         }
 
@@ -83,5 +93,7 @@ namespace FinProj.Views
         {
             Navigation.PushAsync(new SignPage());
         }
+
+
     }
 }

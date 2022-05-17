@@ -17,7 +17,7 @@ namespace FinProj.Views
         public WishListSummaryPage()
         {
             this.InitializeComponent();
-            this.BindingContext = CatalogDataService.Instance.CatalogPageViewModel;
+            this.BindingContext = CatalogDataService.Instance.WishListSummaryViewModel;
         }
     }
 }
