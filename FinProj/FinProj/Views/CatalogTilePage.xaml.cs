@@ -18,7 +18,7 @@ namespace FinProj.Views
         public CatalogTilePage()
         {
             this.InitializeComponent();
-            this.BindingContext = CatalogDataService.Instance.CatalogPageViewModel;
+            this.BindingContext = CatalogDataService.Instance.WishListSummaryViewModel;
         }
 
         protected override void OnSizeAllocated(double width, double height)

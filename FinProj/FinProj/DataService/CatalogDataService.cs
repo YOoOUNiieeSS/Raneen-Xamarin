@@ -40,7 +40,7 @@ namespace FinProj.DataService
         /// <summary>
         /// Gets or sets the value of catalog page view model.
         /// </summary>
-        public CatalogPageViewModel CatalogPageViewModel =>
+        public CatalogPageViewModel WishListSummaryViewModel =>
             this.catalogPageViewModel ??
             (this.catalogPageViewModel = PopulateData<CatalogPageViewModel>("ecommerce.json"));
 

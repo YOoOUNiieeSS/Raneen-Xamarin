@@ -1,21 +1,21 @@
-using FinProj.Data;
+﻿using FinProj.Data;
 using FinProj.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Runtime.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace FinProj.ViewModels
 {
-    /// <summary>
-    /// ViewModel for catalog page.
-    /// </summary>
     [Preserve(AllMembers = true)]
     [DataContract]
-    public class CatalogPageViewModel : BaseViewModel
+    public class WishListSummaryViewModel :BaseViewModel
     {
+
         #region Fields
+        List<ProductDb> allpro = new List<ProductDb>();
 
         private ObservableCollection<Category> filterOptions;
 
@@ -42,7 +42,7 @@ namespace FinProj.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="CatalogPageViewModel" /> class.
         /// </summary>
-        public CatalogPageViewModel()
+        public WishListSummaryViewModel()
         {
             this.FilterOptions = new ObservableCollection<Category>
             {
@@ -297,12 +297,22 @@ namespace FinProj.ViewModels
         /// Invoked when the favourite button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void AddFavouriteClicked(object obj)
+        private async void AddFavouriteClicked(object obj)
         {
             if (obj is Product product)
             {
-                product.IsFavourite = !product.IsFavourite;
-                myFinDB.AddProductToWishList(product,1);
+                //product.IsFavourite = !product.IsFavourite;
+                //myFinDB.AddProductToWishList(product, 1);
+                WishList w = new WishList();
+                ProductDb pro = new ProductDb();    
+                allpro = (List<ProductDb>)await myFinDB.getAllProd();
+                pro = allpro.FirstOrDefault(allpro => allpro.Id == product.Id);
+                //w = myFinDB.mywishList.FirstOrDefault();
+                if (product.IsFavourite == true) { 
+                    product.IsFavourite = false;
+                   
+
+                }
 
             }
         }
@@ -314,7 +324,7 @@ namespace FinProj.ViewModels
         private void AddToCartClicked(object obj)
         {
             // Do something
-            if(obj is Product product)
+            if (obj is Product product)
             {
                 myFinDB.AddProductToCartList(product);
                 Application.Current.MainPage.DisplayAlert("", "Successfully added", "Ok");

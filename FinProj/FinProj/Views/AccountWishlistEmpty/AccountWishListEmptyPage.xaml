@@ -9,8 +9,8 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand" x:Name="mainStack"
+                HorizontalOptions="CenterAndExpand" IsVisible="false">
 
             <Label Text="No items in wishlist" Margin="0,0,0,5" 
                    HorizontalOptions="Center" FontAttributes="Bold"
@@ -19,7 +19,7 @@
 
             <Button Text="Start Now" TextColor="White"
                     HorizontalOptions="FillAndExpand" BackgroundColor="red"
-                    CornerRadius="8"/>
+                    CornerRadius="8" Clicked="Btn_wishListStartNow"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
